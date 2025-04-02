@@ -1,8 +1,8 @@
 
 import s from "./Button.module.css"
-export default function Button ({children, variant, onBgColorChange}) {
+export default function Button ({children, variant, onClick}) {
 return (
-    <button className= {s.btn} onClick={() => onBgColorChange (variant)}>{children}</button>
+    <button className= {s.btn} onClick={() => onClick (variant)}>{children}</button>
 )
 
 }
