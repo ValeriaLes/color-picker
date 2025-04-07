@@ -7,6 +7,15 @@ import Modal from "./Modal";
 function App() {
   const [currentColor, setCurrentColor] = useState("white");
   const [isOpen, setIsOpen] = useState(false)
+  const [values, setValues] = useState({
+    fname: '',
+    lname:'',
+    language:'ua',
+    gender:'',
+    terms:false,
+    sendData:false
+
+  })
 
  
 
@@ -26,6 +35,16 @@ function App() {
   const closeModal = () => {
     setIsOpen(!isOpen)
   }
+
+
+ 
+
+  const onDataSave = (data)  => {
+
+    console.log(data)
+  }
+
+  
 
   return (
 <div >
@@ -48,7 +67,7 @@ function App() {
     </div>
     <div className={s.modalContainer}>
       <Button onClick={openModal} >Open Modal</Button>
-      {isOpen && <Modal onClose={closeModal}/> }
+      {isOpen && <Modal onClose={closeModal} values={values} setValues={setValues} onSave = {onDataSave}/>}
      
       
 
